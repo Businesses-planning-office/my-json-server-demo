@@ -1,16 +1,59 @@
 {
   "posts": [
-    { "id": 1, "title": "Post 1" },
-    { "id": 2, "title": "Post 2" },
-    { "id": 3, "title": "Post 3" },
-    { "id": "test", "title": "Post test" }
-
+    {
+      "id": "success",
+      "return": {
+        "code": 900,
+        "data": null,
+        "msg": "success",
+        "safeCode": "",
+        "sucess": true
+      }
+    },
+    {
+      "id": "fail",
+      "return": {
+        "code": 400,
+        "data": null,
+        "msg": "fail",
+        "safeCode": "",
+        "sucess": false
+      }
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
-  ],
-  "profile": {
-    "name": "bpo"
-  }
+  "gets": [
+    {
+      "id": "notsold",
+      "return": {
+        "batchNo": "xxxxx1",
+        "name": "ProductNameA",
+        "bundleNum": "111",
+        "orderList": [],
+        "status": "notsold"
+      }
+    },
+    {
+      "id": "partiallsold",
+      "return": {
+        "batchNo": "xxxxx2",
+        "name": "ProductNameB",
+        "bundleNum": "222",
+        "orderList": [{ "orderNo": "XXXX", "date": "2022-11-11" }],
+        "status": "soldout"
+      }
+    },
+    {
+      "id": "soldout",
+      "return": {
+        "batchNo": "xxxxx9",
+        "name": "ProductNameC",
+        "bundleNum": "999",
+        "orderList": [
+          { "orderNo": "XXXX", "date": "2022-11-11" },
+          { "orderNo": "YYY", "date": "2022-11-12" }
+        ],
+        "status": "soldout"
+      }
+    }
+  ]
 }
